@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabanal_LineCodingScheme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    
+<p class="student-info">
+    ADOLFH BENEDICT P. SABANAL BSIT-2 /G1
+    <span class="instructor-info">
+        INSTRUCTOR: MA'AM ERICA JEAN S. ABADINAS
+    </span>
+</p>
+
+     <br>
+    <div class="eyebrow">Data Communications & Networking</div>
+    <h1>Line Coding Simulator</h1>
+    <p>Compare 10 waveform graphs for eight line coding schemes and their initial-level variations.</p>
+</header>
+
+<main>
+    <section class="panel">
+        <div class="controls">
+            <div class="stream-field">
+                <label for="bitstream">Bitstream Input</label>
+                <input
+                    id="bitstream"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Enter any number of bits..."
+                    value="111001011000"
+                >
+
+                <div class="status">
+                    <span id="bit-count">12 bits</span>
+                    <span id="validation" aria-live="polite">Valid bitstream</span>
+                </div>
+
+                <div class="helper">
+                    Enter any number of binary digits (0 or 1).
+                </div>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button class="primary" id="encodeBtn">Encode Bitstream</button>
+            <button class="secondary" id="sampleBtn">Load Sample</button>
+            <button class="ghost" id="randomBtn">Random Bits</button>
+            <button class="ghost" id="clearBtn">Clear Input</button>
+        </div>
+
+        <div class="options">
+            <label class="check">
+                <input type="checkbox" id="showGrid" checked>
+                Show Graph Grid
+            </label>
+
+            <label class="check">
+                <input type="checkbox" id="showBits" checked>
+                Show Bit Labels
+            </label>
+
+            <label class="check">
+                <input type="checkbox" id="showVoltage" checked>
+                Show Voltage Levels
+            </label>
+        </div>
+    </section>
+
+    <div class="section-head">
+        <div>
+            <h2>Encoded Waveforms</h2>
+            <p>Compare the signal levels across the same bitstream.</p>
+        </div>
+        <span class="pill">10 Graphs</span>
+    </div>
+
+    <section class="scheme-grid" id="graphs" aria-live="polite"></section>
+
+    <p class="footer-note">
+        <strong>Reading the graphs:</strong>
+        Positive voltage is above the center line, negative voltage is
+        below it, and zero voltage is on the center line. NRZ-I and
+        Differential Manchester each have separate initially HIGH and
+        initially LOW graphs.
+    </p>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
